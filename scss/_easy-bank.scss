@@ -1,0 +1,35 @@
+.easy-bank {
+  padding: 5rem 6%;
+  background-color: $light-greylish-blue;
+  text-align: center;
+
+  .easy-center {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+    gap:2rem;
+    text-align: center;
+    
+
+    .easy-img {
+      width: 100px;
+      height: 100px;
+      margin: 1.5rem auto;
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .easy-bank {
+    text-align: left;
+    
+    .easy-center {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     text-align: left;
+     
+      .easy-img {
+           margin-left: 0;
+           
+       }
+    }
+  }
+}

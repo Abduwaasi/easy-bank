@@ -1,0 +1,134 @@
+nav {
+  max-width: 100%;
+
+  position: relative;
+
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 8%;
+    background-color: $white;
+
+    .logo {
+      height: 1.5rem;
+    }
+    .nav-toggle {
+      width: 2rem;
+      height: 1.4rem;
+      outline: none;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+  .nav-menu {
+    position: absolute;
+    top: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem;
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+    background-color: $white;
+    border-radius: 10px;
+    transition: $long-transitions;
+    z-index: 3;
+    visibility:hidden;
+
+    &.show {
+      visibility: visible;
+    }
+    //  box-shadow: $shadow;
+
+    .nav-link {
+      display: inline-block;
+      margin: 0.5rem auto;
+      padding: 0.2rem 1rem;
+      color: $dark-blue;
+      font-size: 1.4rem;
+      font-weight: 600;
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 3px;
+        background-color: $lime-green;
+        display: block;
+        transition: $transitions;
+        margin-top: 5px;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .custom-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    color: $white;
+    font-size: 1rem;
+    outline: none;
+    background: linear-gradient(to right, $lime-green, $bright-cyan);
+    transition: $transitions;
+    display: none;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: $shadow;
+    }
+  }
+}
+
+/*=========================
+    Media Query
+===========================*/
+
+@media screen and (min-width: 960px) {
+  .nav-center {
+    // width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2rem 6%;
+
+    .nav-header {
+      padding: 0;
+
+      .nav-toggle {
+        display: none;
+      }
+    }
+    .custom-btn {
+      display: flex;
+    }
+    .nav-menu {
+      border-radius: 0;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      transform: translateX(0);
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+      position: relative;
+      background-color: transparent;
+      width: auto;
+      visibility: visible !important;
+
+      .nav-link {
+        padding: 0;
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin: 0 1rem;
+      }
+    }
+    .link-container {
+      height: auto;
+    }
+  }
+}

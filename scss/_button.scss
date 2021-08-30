@@ -1,0 +1,16 @@
+.my-btn {
+  //   width: 100px;
+  padding: 0.5rem 1.5rem;
+  border-color: transparent;
+  outline: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, $lime-green, $bright-cyan);
+  color: $white;
+  font-size: 1.1rem;
+  transition: $transitions;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: $shadow;
+  }
+}
